@@ -3,92 +3,34 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Rock Paper Scissor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-        let computer
-        function computerPlay() {
-            let x = Math.floor(Math.random() * 3);
-            switch (x) {
-                case 0:
-                    return 'rock';
-                    break;
-                case 1:
-                    return 'paper';
-                    break;
-                case 2:
-                    return 'scissors';
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        function playRound(playerSelection,computerSelection){
-            if(playerSelection == 'rock'){
-                if(computerSelection == 'scissors'){
-                    return 'You Win! Rock beat Scissors!';
-                }
-                else if(computerSelection == 'paper'){
-                    return 'You Lose! Paper beat Rock!';
-                }
-                else{
-                    return 'Draw! Rock doesn\'t beat each other!'
-                }
-            }
-            else if(playerSelection == 'scissors'){
-                if(computerSelection == 'paper'){
-                    return 'You Win! Scissors beat Paper!';
-                }
-                else if(computerSelection == 'rock'){
-                    return 'You Lose! Rock beat Scissors!';
-                }
-                else{
-                    return 'Draw! Scissors doesn\'t beat each other!'
-                }
-            }
-            else{
-                if(computerSelection == 'rock'){
-                    return 'You Win! Paper beat Rock!';
-                }
-                else if(computerSelection == 'paper'){
-                    return 'You Lose! Scissors beat Paper!';
-                }
-                else{
-                    return 'Draw! Paper doesn\'t beat each other!'
-                }
-            }
-        }
-
-        function game(){
-            let player = 0,enemy = 0;
-            for(let a = 0;a < 5;a++){
-                let playerSelection;
-                do{
-                    playerSelection = prompt("Rock,Paper,Scissors?").toLowerCase();
-                }while(playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissors');
-                let result = playRound(playerSelection,computerPlay());
-                if(result.indexOf('Win')){
-                    player++;
-                }
-                else if(result.indexOf('Lose')){
-                    player++;
-                }
-                console.log(result);
-            }
-            if(player > enemy){
-                console.log("You WIN!");
-            }
-            else if(enemy > player){
-                console.log("You LOSE!");
-            }
-            else{
-                console.log("DRAW!");
-            }
-        }
-        game();
-    </script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
+    
 </head>
 <body>
+    <div class = 'keys'>
+        <button class="rock" id="rock">rock</button>
+        <button class="paper" id="paper">paper</button>
+        <button class="scissor" id="scissor">scissor</button>
+    </div>
+    <div class='border'>
+        <div class = "result">
+            Choose Rock Paper or Scissor
+        </div>
+    </div>
+    <footer>
+        <div class = "user">
+            Your Score : 0
+        </div>
+        <div class = "info">
+            FIRST TO 5 WIN!
+        </div>
+        <div class = "enemy">
+            Enemy Score : 0
+        </div>
+</footer>
 </body>
+
+<script src="scripts/main.js"></script>
 </html>
